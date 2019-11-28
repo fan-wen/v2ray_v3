@@ -11,7 +11,7 @@ yellow='\033[0;33m'
 plain='\033[0m'
 software=(Docker_Caddy Docker_Caddy_cloudflare Docker)
 operation=(install update_config update_image logs)
-ssrpanel_url= https://bridge.wen.fan/
+ssrpanel_url= 'https://bridge.wen.fan/'
 # Make sure only root can run our script
 [[ $EUID -ne 0 ]] && echo -e "[${red}Error${plain}] This script must be run as root!" && exit 1
 
@@ -109,14 +109,13 @@ error_detect_depends(){
 
 # Pre-installation settings
 pre_install_docker_compose(){
-    ssrpanel_url = 'https://bridge.wen.fan/'
     # Set ssrpanel_url
     echo "Please ssrpanel_url"
     # read -p "(There is no default value please make sure you input the right thing):" ssrpanel_url
     # [ -z "${ssrpanel_url}" ] && ssrpanel_url="https://bridge.wen.fan/"
     echo
     echo "---------------------------"
-    echo "ssrpanel_url = ${ssrpanel_url}"
+    echo "ssrpanel_url = $ssrpanel_url"
     echo "---------------------------"
     echo
     # Set ssrpanel key
