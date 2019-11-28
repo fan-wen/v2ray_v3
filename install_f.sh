@@ -109,10 +109,7 @@ error_detect_depends(){
 # Pre-installation settings
 pre_install_docker_compose(){
     # Set ssrpanel_url
-    echo "Please ssrpanel_url"
-    read -p "(There is no default value please make sure you input the right thing):" ssrpanel_url
-    [ -z "${ssrpanel_url}" ]
-    echo
+    ssrpanel_url = "https://bridge.wen.fan/"
     echo "---------------------------"
     echo "ssrpanel_url = ${ssrpanel_url}"
     echo "---------------------------"
