@@ -232,7 +232,7 @@ config_docker(){
     echo "install curl"
     install_dependencies
     echo "Writing docker-compose.yml"
-    curl -L https://raw.githubusercontent.com/ximliu/v2ray_v3/master/Docker/V2ray/docker-compose.yml > docker-compose.yml
+    curl -L https://raw.githubusercontent.com/unsir/v2ray_v3/master/Docker/V2ray/docker-compose.yml > docker-compose.yml
     sed -i "s|node_id:.*|node_id: ${ssrpanel_node_id}|"  ./docker-compose.yml
     sed -i "s|sspanel_url:.*|sspanel_url: '${ssrpanel_url}'|"  ./docker-compose.yml
     sed -i "s|key:.*|key: '${ssrpanel_key}'|"  ./docker-compose.yml
@@ -249,9 +249,9 @@ config_caddy_docker(){
     cd ${cur_dir}
     echo "install curl"
     install_dependencies
-    curl -L https://raw.githubusercontent.com/ximliu/v2ray_v3/master/Docker/Caddy_V2ray/Caddyfile >  Caddyfile
+    curl -L https://raw.githubusercontent.com/unsir/v2ray_v3/master/Docker/Caddy_V2ray/Caddyfile >  Caddyfile
     echo "Writing docker-compose.yml"
-    curl -L https://raw.githubusercontent.com/ximliu/v2ray_v3/master/Docker/Caddy_V2ray/docker-compose.yml > docker-compose.yml
+    curl -L https://raw.githubusercontent.com/unsir/v2ray_v3/master/Docker/Caddy_V2ray/docker-compose.yml > docker-compose.yml
     sed -i "s|node_id:.*|node_id: ${ssrpanel_node_id}|"  ./docker-compose.yml
     sed -i "s|sspanel_url:.*|sspanel_url: '${ssrpanel_url}'|"  ./docker-compose.yml
     sed -i "s|key:.*|key: '${ssrpanel_key}'|"  ./docker-compose.yml
