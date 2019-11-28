@@ -11,7 +11,6 @@ yellow='\033[0;33m'
 plain='\033[0m'
 software=(Docker_Caddy Docker_Caddy_cloudflare Docker)
 operation=(install update_config update_image logs)
-ssrpanel_url= 'https://bridge.wen.fan/'
 # Make sure only root can run our script
 [[ $EUID -ne 0 ]] && echo -e "[${red}Error${plain}] This script must be run as root!" && exit 1
 
@@ -127,17 +126,7 @@ pre_install_docker_compose(){
     echo "ssrpanel_key = ${ssrpanel_key}"
     echo "---------------------------"
     echo
-    
-    # Set ssrpanel node_id
-    echo "ssrpanel node_id"
-    read -p "(Default value: 0 ):" ssrpanel_node_id
-    [ -z "${ssrpanel_node_id}" ] && ssrpanel_node_id=0
-    echo
-    echo "---------------------------"
-    echo "ssrpanel_node_id = ${ssrpanel_node_id}"
-    echo "---------------------------"
-    echo
-    
+
     # Set ssrpanel speedtest function
     echo "use ssrpanel speedtest"
     read -p "(ssrpanel speedtest: Default (6) hours every time):" ssrpanel_speedtest
@@ -145,6 +134,16 @@ pre_install_docker_compose(){
     echo
     echo "---------------------------"
     echo "ssrpanel_speedtest = ${ssrpanel_speedtest}"
+    echo "---------------------------"
+    echo
+
+    # Set ssrpanel node_id
+    echo "ssrpanel node_id"
+    read -p "(Default value: 0 ):" ssrpanel_node_id
+    [ -z "${ssrpanel_node_id}" ] && ssrpanel_node_id=0
+    echo
+    echo "---------------------------"
+    echo "ssrpanel_node_id = ${ssrpanel_node_id}"
     echo "---------------------------"
     echo
 
