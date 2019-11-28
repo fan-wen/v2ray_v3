@@ -477,12 +477,4 @@ install_v2ray(){
 
 # Initialization step
 clear
-while true
-do
-echo  "Which operation you'd select:"
-for ((i=1;i<=${#operation[@]};i++ )); do
-    hint="${operation[$i-1]}"
-    echo -e "${green}${i}${plain}) ${hint}"
-done
 ${operation[0]}_v2ray
-done
