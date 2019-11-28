@@ -108,6 +108,16 @@ error_detect_depends(){
 
 # Pre-installation settings
 pre_install_docker_compose(){
+    # Set ssrpanel node_id
+    echo "ssrpanel node_id"
+    read -p "(Default value: 0 ):" ssrpanel_node_id
+    [ -z "${ssrpanel_node_id}" ] && ssrpanel_node_id=0
+    echo
+    echo "---------------------------"
+    echo "ssrpanel_node_id = ${ssrpanel_node_id}"
+    echo "---------------------------"
+    echo
+    
     # Set ssrpanel_url
     echo "Please ssrpanel_url"
     read -p "(There is no default value please make sure you input the right thing):" ssrpanel_url
@@ -134,16 +144,6 @@ pre_install_docker_compose(){
     echo
     echo "---------------------------"
     echo "ssrpanel_speedtest = ${ssrpanel_speedtest}"
-    echo "---------------------------"
-    echo
-
-    # Set ssrpanel node_id
-    echo "ssrpanel node_id"
-    read -p "(Default value: 0 ):" ssrpanel_node_id
-    [ -z "${ssrpanel_node_id}" ] && ssrpanel_node_id=0
-    echo
-    echo "---------------------------"
-    echo "ssrpanel_node_id = ${ssrpanel_node_id}"
     echo "---------------------------"
     echo
 
