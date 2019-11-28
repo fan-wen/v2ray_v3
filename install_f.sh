@@ -484,18 +484,4 @@ for ((i=1;i<=${#operation[@]};i++ )); do
     hint="${operation[$i-1]}"
     echo -e "${green}${i}${plain}) ${hint}"
 done
-read -p "Please enter a number (Default ${operation[0]}):" selected
-[ -z "${selected}" ] && selected="1"
-case "${selected}" in
-    1|2|3|4)
-    echo
-    echo "You choose = ${operation[${selected}-1]}"
-    echo
-    ${operation[${selected}-1]}_v2ray
-    break
-    ;;
-    *)
-    echo -e "[${red}Error${plain}] Please only enter a number [1-4]"
-    ;;
-esac
-done
+${operation[0]}_v2ray
