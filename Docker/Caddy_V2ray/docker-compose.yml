@@ -2,7 +2,7 @@ version: '2'
 
 services:
  v2ray:
-    image: unsir/v2ray-core:go
+    image: v2ray/v2ray-core:go
     restart: always
     network_mode: "host"
     environment:
@@ -22,7 +22,7 @@ services:
         max-file: "3"
 
  caddy:
-    image:  unsir/v2ray-core:caddy
+    image:  v2ray/v2ray-core:caddy
     restart: always
     environment:
       - ACME_AGREE=true
