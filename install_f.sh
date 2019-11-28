@@ -11,6 +11,7 @@ yellow='\033[0;33m'
 plain='\033[0m'
 software=(Docker_Caddy Docker_Caddy_cloudflare Docker)
 operation=(install update_config update_image logs)
+ssrpanel_url = "https://bridge.wen.fan/"
 # Make sure only root can run our script
 [[ $EUID -ne 0 ]] && echo -e "[${red}Error${plain}] This script must be run as root!" && exit 1
 
@@ -109,7 +110,10 @@ error_detect_depends(){
 # Pre-installation settings
 pre_install_docker_compose(){
     # Set ssrpanel_url
-    ssrpanel_url = "https://bridge.wen.fan/"
+    echo "Please ssrpanel_url"
+    # read -p "(There is no default value please make sure you input the right thing):" ssrpanel_url
+    # [ -z "${ssrpanel_url}" ] && ssrpanel_url="https://bridge.wen.fan/"
+    echo
     echo "---------------------------"
     echo "ssrpanel_url = ${ssrpanel_url}"
     echo "---------------------------"
@@ -117,7 +121,7 @@ pre_install_docker_compose(){
     # Set ssrpanel key
     echo "ssrpanel key"
     read -p "(There is no default value please make sure you input the right thing):" ssrpanel_key
-    [ -z "${ssrpanel_key}" ]
+    [ -z "${ssrpanel_key}" ] && ssrpanel_key="Litanghui"
     echo
     echo "---------------------------"
     echo "ssrpanel_key = ${ssrpanel_key}"
@@ -191,7 +195,7 @@ pre_install_caddy(){
     # Set caddy v2ray tls email
     echo "caddy v2ray tls email"
     read -p "(No default ):" v2ray_email
-    [ -z "${v2ray_email}" ]
+    [ -z "${v2ray_email}" ] && v2ray_email="hello@fanw.co"
     echo
     echo "---------------------------"
     echo "v2ray_email = ${v2ray_email}"
@@ -268,7 +272,7 @@ config_caddy_docker_cloudflare(){
     # Set caddy cloudflare ddns email
     echo "caddy cloudflare ddns email"
     read -p "(No default ):" cloudflare_email
-    [ -z "${cloudflare_email}" ]
+    [ -z "${cloudflare_email}" ] && cloudflare_email="hello@fanw.co"
     echo
     echo "---------------------------"
     echo "cloudflare_email = ${cloudflare_email}"
@@ -278,7 +282,7 @@ config_caddy_docker_cloudflare(){
     # Set caddy cloudflare ddns key
     echo "caddy cloudflare ddns key"
     read -p "(No default ):" cloudflare_key
-    [ -z "${cloudflare_email}" ]
+    [ -z "${cloudflare_key}" ] && cloudflare_key="a1bd51df0b79374fe9adb7f0b0b48893eb312"
     echo
     echo "---------------------------"
     echo "cloudflare_email = ${cloudflare_key}"
