@@ -116,7 +116,7 @@ pre_install_docker_compose(){
     # [ -z "${ssrpanel_url}" ] && ssrpanel_url="https://bridge.wen.fan/"
     echo
     echo "---------------------------"
-    echo "ssrpanel_url = $ssrpanel_url"
+    echo "ssrpanel_url = ${ssrpanel_url}"
     echo "---------------------------"
     echo
     # Set ssrpanel key
