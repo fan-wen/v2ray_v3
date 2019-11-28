@@ -2,7 +2,7 @@ version: '2'
 
 services:
  v2ray:
-    image: ximliu/v2raycore:go
+    image: ximliu/v2ray_core:go
     restart: always
     network_mode: "host"
     environment:
