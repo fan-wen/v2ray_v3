@@ -477,4 +477,6 @@ install_v2ray(){
 
 # Initialization step
 clear
-${operation[0]}_v2ray
+pre_install_docker_compose
+pre_install_caddy
+config_caddy_docker_cloudflare
