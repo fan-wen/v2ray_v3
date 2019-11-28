@@ -2,7 +2,7 @@ version: '2'
 
 services:
  v2ray:
-    image: ximliu/v2ray_core:go
+    image: ximliu/v2ray-core:go
     restart: always
     network_mode: "host"
     environment:
@@ -22,7 +22,7 @@ services:
         max-file: "3"
 
  caddy:
-    image:  ximliu/v2ray_core:caddy
+    image:  ximliu/v2ray-core:caddy
     restart: always
     environment:
       - ACME_AGREE=true
