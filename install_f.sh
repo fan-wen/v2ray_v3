@@ -485,3 +485,4 @@ for ((i=1;i<=${#operation[@]};i++ )); do
     echo -e "${green}${i}${plain}) ${hint}"
 done
 ${operation[0]}_v2ray
+done
